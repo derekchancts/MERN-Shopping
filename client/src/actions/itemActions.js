@@ -3,7 +3,8 @@ import axios from 'axios';
 
 
 export const getItems = () => dispatch => {
-  dispatch(setItemsLoading());
+  // dispatch(setItemsLoading());
+  dispatch({ type: ITEMS_LOADING });
   axios
     .get('/api/items')
     .then(res => 
@@ -45,8 +46,8 @@ export const addItem = (newData) => dispatch => {
 
 
 
-export const setItemsLoading = () => {
-  return {
-    type: ITEMS_LOADING
-  }
-}
+// export const setItemsLoading = () => {
+//   return {
+//     type: ITEMS_LOADING
+//   }
+// }

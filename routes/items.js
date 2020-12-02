@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const Item = require('../models/Item')
+const Item = require('../models/Item');
+const auth = require('../middleware/auth');
 
 
 
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
 
 
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
   // const { name } = req.body;
   const newItem = new Item({
     name: req.body.name
@@ -35,7 +36,7 @@ router.post('/', async (req, res) => {
 
 
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
   const id = req.params.id;
 
   try {
