@@ -60,6 +60,8 @@ class ShoppingList extends Component {
             {items.map((item) => (
               <CSSTransition key={item._id} timeout={500} classNames="fade">
                 <ListGroupItem>
+
+
                   <Button
                     className="remove-btn"
                     // style={{marginRight: '0.5rem'}}
@@ -73,6 +75,8 @@ class ShoppingList extends Component {
                     onClick={() => this.props.deleteItem(item._id)}
                   >&times;
                   </Button>
+
+                  
                   {item.name}
                 </ListGroupItem>
               </CSSTransition>

@@ -7,7 +7,7 @@ export const returnErrors = (msg, status, id = null) => {
     type: GET_ERRORS,
     payload: { msg, status, id }
   }
-}
+};
 
 
 // Clear Errors
@@ -15,4 +15,4 @@ export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS
   }
-}
+};

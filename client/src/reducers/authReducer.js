@@ -2,7 +2,7 @@ import {
   USER_LOADING, 
   USER_LOADED, 
   AUTH_ERROR,
-  LOGIN_SECCESS,
+  LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT_SUCCESS,
   REGISTER_SUCCESS,
@@ -32,7 +32,7 @@ export default function(state = initialState, action) {
         isLoading: false,
         user: action.payload
       };
-    case LOGIN_SECCESS:
+    case LOGIN_SUCCESS:
     case REGISTER_SUCCESS:
       localStorage.setItem('token', action.payload.token);
       return {

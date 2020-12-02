@@ -40,7 +40,6 @@ class ItemModal extends Component {
 
     // close modal
     this.toggle();
-
   }
 
 
@@ -52,14 +51,21 @@ class ItemModal extends Component {
 
 
   render() {
+    const { isAuthenticated } = this.props;
+
     return(
       <div>
+      
+      { isAuthenticated ? (
         <Button
           color="dark"
           style={{marginBottom: '2rem'}}
           onClick={this.toggle}
         >Add Item
         </Button>
+      ) : (
+        <h4> Please log in to be able to add new items</h4>
+      )}
 
         <Modal
           isOpen={this.state.modal}
@@ -102,7 +108,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => {
   return {
-    item: state.item
+    item: state.item,
+    isAuthenticated: state.auth.isAuthenticated
   }
 }
 
